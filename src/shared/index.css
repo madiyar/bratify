@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Arial Narrow';
+    src: local('Arial Narrow'), url('font/ArialNarrow.woff2') format('woff2'),
+      url('font/ArialNarrow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: 'Arial';
+    src: local('Arial'), url('font/ArialMT.woff2') format('woff2'),
+      url('font/ArialMT.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    @apply bg-neutral-900 text-white;
+    font-family: 'Arial', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-2 h-1;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent rounded-full;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full border-none bg-primary;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-green-500;
+  }
+}
+
+@layer components {
+  .poster {
+    font-family: Arial Narrow;
+    background: #8ace00;
+    color: black;
+    letter-spacing: -1px;
+
+    @apply aspect-square shadow-2xl contrast-125 brightness-125 select-none;
+    @apply max-w-32 md:max-w-48 text-3xl md:text-4xl blur-[0.8px] md:blur-[1px];
+    @apply flex items-center justify-center text-center overflow-hidden lowercase;
+  }
+
+  .poster span {
+    transform: scale(1, 1.2);
+  }
+}
